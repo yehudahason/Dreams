@@ -1,0 +1,48 @@
+@font-face {
+    font-family : Arimo;
+     src: url(./Arimo/Arimo-VariableFont_wght.ttf);
+}
+body {
+    /* font-family Arimo; */
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    color : rgb(255, 255, 255) ;
+    text-align :right;
+    direction :rtl;
+    background-image: url(bg.jpg);
+    background-repeat: no-repeat ;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+ .headercontainer {
+    display: flex ;
+    flex-direction:  column;
+    
+ }
+
+ .navcontainer {
+    display: flex ;
+
+ }
+ pre {
+    font-family:  Arial, Helvetica, sans-serif;
+    margin-right : 50px ;
+} 
+p {
+    margin-right: 50px;
+    margin-left: 500px;
+}
+h1 ,h2 {
+    margin-right : 80px ;
+
+}
+
+h2 {
+    text-decoration: underline ;
+}
+
+a {
+    color: white;
+    margin-right: 30px;
+} 
