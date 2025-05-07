@@ -26,16 +26,19 @@ body {
     display: flex ;
 
  }
+ .main-container {
+    width: 90%;
+    margin: auto;
+ }
  pre {
     font-family:  Arial, Helvetica, sans-serif;
-    margin-right : 50px ;
+    width: 100%;
+    padding: 20px;
 } 
-p {
-    margin-right: 50px;
-    margin-left: 500px;
-}
+
 h1 ,h2 {
-    margin-right : 80px ;
+    text-align: center;
+    margin: 20px;
 
 }
 
@@ -43,7 +46,21 @@ h2 {
     text-decoration: underline ;
 }
 
-a {
+.headercontainer a {
+    cursor: pointer;
+    text-decoration: none;
     color: white;
-    margin-right: 30px;
+    margin: 25px;
+    
 } 
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+    color: blanchedalmond;
+    margin: 25px;
+}
+
+.headercontainer a:hover {
+    transform: scale(0.95);
+}
