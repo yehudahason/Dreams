@@ -1,0 +1,82 @@
+@font-face {
+  font-family: Arimo;
+  src: url(./Arimo/Arimo-VariableFont_wght.ttf);
+}
+body {
+  /* font-family Arimo; */
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: rgb(255, 255, 255);
+  text-align: right;
+  direction: rtl;
+  background-image: url(../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+.headercontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navcontainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-container {
+  width: 90%;
+  margin: 30px;
+}
+
+h1,
+h2 {
+  text-align: center;
+  margin: 20px;
+}
+
+.headercontainer a {
+  cursor: pointer;
+  text-decoration: none;
+  color: white;
+  margin: 25px;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: blanchedalmond;
+  margin: 10px;
+}
+.cntrlnk {
+  text-align: center;
+}
+.headercontainer a:hover {
+  color: burlywood;
+}
+
+@media screen and (max-width: 768px) {
+  .main-container {
+    width: 100%;
+    margin: 10px;
+  }
+}
