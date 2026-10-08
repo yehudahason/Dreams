@@ -17,7 +17,7 @@ form.addEventListener("submit", (e) => {
 
   query = document.querySelector("#search").value;
 
-  console.log(query);
+  // console.log(query);
   handleSearch(e);
 });
 
@@ -58,7 +58,7 @@ const handleSearch = (e) => {
     const matches4 = searchWord2(text4, item);
     matches4.forEach((m) => array4.add(m));
   });
-  console.log(array1);
+  // console.log(array1);
   text1El.innerHTML = `
   <h4>מסכת ברכות</h4>
    ${array1.size === 0 ? `<h5>אין תוצאות</h5>` : [...array1].join("<br/>")}`;
