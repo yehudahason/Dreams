@@ -37,6 +37,7 @@ const handleSearch = (e) => {
     "אומר",
   ];
   const searchArray = query
+    .replace(/"/g, "")
     .split(/\s+/)
     .filter(Boolean)
     .filter((el) => !commonWords.includes(el));
@@ -78,6 +79,12 @@ async function fetchBooks() {
       "https://yehudahason.github.io/Dreams/txt/fxp.txt",
       "https://yehudahason.github.io/Dreams/txt/kaduri.txt",
       "https://yehudahason.github.io/Dreams/txt/sodot.txt",
+    ];
+    const urls2 = [
+      "../txt/brachot.txt",
+      "../txt/fxp.txt",
+      "../txt/kaduri.txt",
+      "../txt/sodot.txt",
     ];
 
     const responses = await Promise.all(urls.map((url) => fetch(url)));

@@ -1,3 +1,11 @@
+function normalizeWord(word) {
+  return word
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/["'״׳]/g, "")
+    .toLowerCase();
+}
+
 export function matchResult(a, b) {
   if (a === b) return true;
 
@@ -25,17 +33,19 @@ export const searchWord2 = (text, query) => {
   const exactRanges = [];
   const fuzzyRanges = [];
 
-  const regex = /[\p{L}]+/gu;
-  const lowerQuery = query.toLowerCase();
+  const regex = /[\p{L}\p{M}"'״׳]+/gu;
 
-  // ✅ get ALL words once (performance fix)
+  // Normalize the search query
+  const lowerQuery = normalizeWord(query);
+
+  // Get all words from the entire file
   const allMatches = [...text.matchAll(regex)];
 
   allMatches.forEach((match, i) => {
     const word = match[0];
-    const lowerWord = word.toLowerCase();
 
-    //  const index = match.index || 0;
+    // Normalize each word before comparing
+    const lowerWord = normalizeWord(word);
 
     const start = getStartIndex(allMatches, i, 4);
     const end = getEndIndex(allMatches, i, 80);
@@ -52,7 +62,6 @@ export const searchWord2 = (text, query) => {
 
   return [...exact, ...fuzzy];
 };
-
 function mergeRanges(ranges, text) {
   if (ranges.length === 0) return [];
 
