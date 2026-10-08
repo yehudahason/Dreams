@@ -71,6 +71,7 @@ body::before {
 }
 .hover-con {
   position: relative;
+  cursor: pointer;
 }
 .hover-con .info {
   position: absolute;
@@ -87,7 +88,7 @@ body::before {
   visibility: visible;
 }
 input[type="text"] {
-  padding: 0.4rem 1rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 8px;
   min-width: 220px;
   font-size: 1.5rem;
@@ -98,10 +99,11 @@ input[type="text"] {
   gap: 1rem;
 }
 button {
-  padding: 0.4rem 1rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 8px;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   background-color: blanchedalmond;
+  cursor: pointer;
 }
 .centering {
   display: flex;
