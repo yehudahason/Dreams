@@ -11,6 +11,7 @@ const text3El = document.querySelector(".text3El");
 const text4El = document.querySelector(".text4El");
 const form = document.querySelector("#searchForm");
 
+const baseUrl = "https://yehudahason.github.io/Dreams";
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -70,19 +71,27 @@ const handleSearch = (e) => {
   <h4>sodot.tv</h4>
    ${array4.size === 0 ? `<h5>אין תוצאות</h5> ` : [...array4].join("<br/>")}`;
 };
-
 async function fetchBooks() {
   try {
-    const res = await fetch("../txt/brachot.txt");
-    text1 = await res.text();
-    const res2 = await fetch("../txt/fxp.txt");
-    text2 = await res2.text();
-    const res3 = await fetch("../txt/kaduri.txt");
-    text3 = await res3.text();
-    const res4 = await fetch("../txt/sodot.txt");
-    text4 = await res4.text();
+    const urls = [
+      "https://yehudahason.github.io/Dreams/txt/brachot.txt",
+      "https://yehudahason.github.io/Dreams/txt/fxp.txt",
+      "https://yehudahason.github.io/Dreams/txt/kaduri.txt",
+      "https://yehudahason.github.io/Dreams/txt/sodot.txt",
+    ];
+
+    const responses = await Promise.all(urls.map((url) => fetch(url)));
+
+    // Check HTTP errors
+    if (responses.some((res) => !res.ok)) {
+      throw new Error("Failed to fetch one or more books");
+    }
+
+    [text1, text2, text3, text4] = await Promise.all(
+      responses.map((res) => res.text()),
+    );
   } catch (err) {
-    console.error(err);
+    console.error("Error fetching books:", err);
   }
 }
 await fetchBooks();
