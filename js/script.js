@@ -59,16 +59,16 @@ const handleSearch = (e) => {
   console.log(array1);
   text1El.innerHTML = `
   <h4>מסכת ברכות</h4>
-   ${array1.size === 0 ? `<h5>אין תוצאות</h5>` : [...array1].join("\n")}`;
+   ${array1.size === 0 ? `<h5>אין תוצאות</h5>` : [...array1].join("<br/>")}`;
   text2El.innerHTML = ` 
   <h4>FXP</h4>
-  ${array2.size === 0 ? `<h5>אין תוצאות</h5>` : [...array2].join("\n")}`;
+  ${array2.size === 0 ? `<h5>אין תוצאות</h5>` : [...array2].join("<br/>")}`;
   text3El.innerHTML = `
   <h4>כדורינט</h4>
-   ${array3.size === 0 ? ` <h5>אין תוצאות</h5>` : [...array3].join("\n")}`;
+   ${array3.size === 0 ? ` <h5>אין תוצאות</h5>` : [...array3].join("<br/>")}`;
   text4El.innerHTML = `
   <h4>sodot.tv</h4>
-   ${array4.size === 0 ? `<h5>אין תוצאות</h5> ` : [...array4].join("\n")}`;
+   ${array4.size === 0 ? `<h5>אין תוצאות</h5> ` : [...array4].join("<br/>")}`;
 };
 
 async function fetchBooks() {
