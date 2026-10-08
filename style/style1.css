@@ -17,6 +17,7 @@ body {
   background-size: cover;
   z-index: 1;
   font-size: 1.25rem;
+  /* overflow: hidden; */
 }
 body::before {
   content: "";
@@ -62,6 +63,28 @@ body::before {
   display: flex;
   justify-content: center;
   gap: 2rem;
+  align-items: center;
+}
+.search-con img {
+  width: 2rem;
+  object-fit: cover;
+}
+.hover-con {
+  position: relative;
+}
+.hover-con .info {
+  position: absolute;
+  visibility: hidden;
+  left: 15px;
+  top: -2rem;
+  width: 13rem;
+  background-color: blue;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+.hover-con:hover .info {
+  visibility: visible;
 }
 input[type="text"] {
   padding: 0.4rem 1rem;
@@ -175,5 +198,15 @@ a {
 @media screen and (max-width: 468px) {
   #searchForm {
     flex-direction: column;
+  }
+  .search-con {
+    flex-direction: column;
+  }
+  .hover-con .info {
+    left: -50px;
+    top: -2rem;
+  }
+  .main-container {
+    margin: 0;
   }
 }
