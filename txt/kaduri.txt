@@ -1,41 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>פירוש חלומות על פי היהדות</title>
-    <link rel="stylesheet" href="./style/style1.css" />
-  </head>
-  <body>
-    <header>
-      <div class="headercontainer">
-        <h1>פירוש חלומות על פי היהדות</h1>
 
-        <nav class="navcontainer">
-          <a href="./index.html">כדורינט</a>
-          <a href="./2.html">מסכת ברכות</a>
-          <a href="./3.html">FXP</a>
-          <a href="./4.html">sodot tv</a>
-          <a class="centering" href="./searchPage.html"
-            >חפש
-
-            <img src="./img/search.png" alt="" />
-          </a>
-        </nav>
-      </div>
-    </header>
-    <h2>מאתר כדורי.נט</h2>
-
-    <div class="main-container">
-      <h3>
-        <p>
-          פתרון חלומות מתוך ספר קבלה מעשית עתיק, הנקרא 'לדרוש אלוהים', שחיברו
-          המקובל רבי אברהם חמווי זצ"ל ● הפתרונות הם ע"פ דברי יוסף הצדיק, דניאל
-          הנביא, תלמוד בבלי, רב האי גאון, רש"י, ועוד
-        </p>
-      </h3>
-
-      <p>
         הרואה שעומד במקום צר – פתאום ירוויח וטוב לו. וכותב על זה בספר "לדרוש
         אלוהים": "ולא ידעתי למה? אדרבא, אני שמעתי וגם אני ניסיתי, כי החולם שרואה
         עצמו סגור במקום אחד ואינו יכול לצאת, או שהוא יוצא מחורים צרים, מראה צער
@@ -135,43 +98,4 @@
         שימות זרעו. הרואה עצמו יחף – יבא לו הפסד. הרואה שהוא חתוך רגליים – ילך
         למקום רחוק. הרואה שאחד מכרעיו חתוכה – יפול בחולי גדול ויתרפא. הרואה
         שאוכל בשר אדם – רע ישנא. הרואה שאוכל ראש אדם – יאכל כל רכושו במחלה.
-      </p>
-    </div>
-    <div class="cntrlnk">
-      <a href="http://www.kaduri.net/?CategoryID=506"> קרדיט לאתר כדורי.נט</a>
-    </div>
-    <div class="headercontainer">
-      <div class="navcontainer">
-        <a href="./index.html">כדורינט</a>
-        <a href="./2.html">מסכת ברכות</a>
-        <a href="./3.html">FXP</a>
-        <a href="./4.html">sodot tv</a>
-        <a class="centering" href="./searchPage.html"
-          >חפש
-
-          <img src="./img/search.png" alt="" />
-        </a>
-      </div>
-      <footer>
-        <div dir="ltr" class="attribution">
-          <span class="separator" aria-hidden="true"> • </span>
-          Coded by
-          <a
-            href="https://github.com/yehudahason"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            @Yehuda Hason
-          </a>
-        </div>
-      </footer>
-    </div>
-    <script>
-      window.nl_color = "yellow";
-      window.nl_compact = "1";
-      window.nl_dir = "/nl-files/";
-    </script>
-
-    <script src="/nagishli.js?v=2.3" charset="utf-8" defer></script>
-  </body>
-</html>
+      
