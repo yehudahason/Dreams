@@ -27,7 +27,7 @@ body::before {
   width: 100%;
   height: 100%;
   z-index: -1;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.2);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -52,11 +52,6 @@ h4 {
 h5 {
   font-weight: 500;
   font-size: 1.25rem;
-}
-h3 {
-  text-align: center;
-  color: rgb(240, 201, 142);
-  font-size: 2rem;
 }
 
 .headercontainer {
@@ -90,19 +85,16 @@ a {
   gap: 0.5rem;
 }
 .main-container {
+  background-color: rgb(38, 38, 41);
   width: 90%;
   margin: 30px auto;
   min-height: 60vh;
   letter-spacing: 1px;
   line-height: 2rem;
-  color: rgb(249, 244, 238);
+  color: rgb(245, 214, 176);
   font-weight: 550;
-}
-
-.main-container h3 {
-  font-size: 1.25rem;
-  font-weight: 500;
-  color: rgb(235, 180, 98);
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 .sr-only {
