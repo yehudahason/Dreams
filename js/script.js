@@ -75,10 +75,10 @@ const handleSearch = (e) => {
 async function fetchBooks() {
   try {
     const urls = [
-      "https://yehudahason.github.io/Dreams/txt/brachot.txt",
-      "https://yehudahason.github.io/Dreams/txt/fxp.txt",
-      "https://yehudahason.github.io/Dreams/txt/kaduri.txt",
-      "https://yehudahason.github.io/Dreams/txt/sodot.txt",
+      "https://dreams.pitron-halomot.org/txt/brachot.txt",
+      "https://dreams.pitron-halomot.org/txt/fxp.txt",
+      "https://dreams.pitron-halomot.org/txt/kaduri.txt",
+      "https://dreams.pitron-halomot.org/txt/sodot.txt",
     ];
     const urls2 = [
       "../txt/brachot.txt",
