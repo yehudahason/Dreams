@@ -67,16 +67,16 @@ const handleSearch = (e) => {
   searchDiv.style.visibility = "visible";
   text1El.innerHTML = `
   <h4>מסכת ברכות</h4>
-   ${array1.size === 0 ? `<h5>אין תוצאות</h5>` : [...array1].join("<br/>")}`;
+   ${array1.size === 0 ? `<h5>אין תוצאות</h5>` : [...array1].join("<br/><p>*</p>")}`;
   text2El.innerHTML = ` 
   <h4>FXP</h4>
-  ${array2.size === 0 ? `<h5>אין תוצאות</h5>` : [...array2].join("<br/>")}`;
+  ${array2.size === 0 ? `<h5>אין תוצאות</h5>` : [...array2].join("<br/><p>*</p>")}`;
   text3El.innerHTML = `
   <h4>כדורינט</h4>
-   ${array3.size === 0 ? ` <h5>אין תוצאות</h5>` : [...array3].join("<br/>")}`;
+   ${array3.size === 0 ? ` <h5>אין תוצאות</h5>` : [...array3].join("<br/><p>*</p>")}`;
   text4El.innerHTML = `
   <h4>sodot.tv</h4>
-   ${array4.size === 0 ? `<h5>אין תוצאות</h5> ` : [...array4].join("<br/>")}`;
+   ${array4.size === 0 ? `<h5>אין תוצאות</h5> ` : [...array4].join("<br/><p>*</p>")}`;
 };
 async function fetchBooks() {
   try {
