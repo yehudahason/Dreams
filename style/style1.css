@@ -98,6 +98,19 @@ a {
   padding: 1rem;
   border-radius: 10px;
 }
+.main-container-search {
+  background-color: rgb(38, 38, 41);
+  width: 90%;
+  margin: 30px auto;
+  min-height: 60vh;
+  letter-spacing: 1px;
+  line-height: 2rem;
+  color: rgb(245, 214, 176);
+  font-weight: 550;
+  padding: 1rem;
+  border-radius: 10px;
+  visibility: hidden;
+}
 
 .sr-only {
   position: absolute;

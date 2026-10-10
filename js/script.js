@@ -10,6 +10,7 @@ const text2El = document.querySelector(".text2El");
 const text3El = document.querySelector(".text3El");
 const text4El = document.querySelector(".text4El");
 const form = document.querySelector("#searchForm");
+const searchDiv = document.querySelector(".main-container-search");
 
 const baseUrl = "https://yehudahason.github.io/Dreams";
 form.addEventListener("submit", (e) => {
@@ -36,6 +37,10 @@ const handleSearch = (e) => {
     "אחר",
     "אומר",
   ];
+
+  if (commonWords.includes(query)) {
+    return;
+  }
   const searchArray = query
     .replace(/"/g, "")
     .split(/\s+/)
@@ -59,6 +64,7 @@ const handleSearch = (e) => {
     matches4.forEach((m) => array4.add(m));
   });
   // console.log(array1);
+  searchDiv.style.visibility = "visible";
   text1El.innerHTML = `
   <h4>מסכת ברכות</h4>
    ${array1.size === 0 ? `<h5>אין תוצאות</h5>` : [...array1].join("<br/>")}`;
