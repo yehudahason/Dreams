@@ -168,8 +168,16 @@ a {
 
 .result-btns {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.8rem;
   justify-content: center;
+}
+.result-btns button {
+  padding: 4px;
+  border: none;
+}
+.result-btns button:hover {
+  background-color: rgb(152, 138, 120);
 }
 input[type="text"] {
   padding: 0.2rem 0.6rem;
