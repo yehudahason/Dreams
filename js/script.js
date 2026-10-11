@@ -118,6 +118,16 @@ const handleSearch = () => {
   const matches4 = searchWord3(booksArray[3], query);
 
   searchDiv.style.visibility = "visible";
+  //No results return
+  if (
+    matches1.length === 0 &&
+    matches2.length === 0 &&
+    matches3.length === 0 &&
+    matches4.length === 0
+  ) {
+    updateResults(text1El, btn1, ["אין תוצאות חפש משהו אחר"], "ברכות");
+    return;
+  }
 
   updateResults(text1El, btn1, matches1, "ברכות");
   updateResults(text2El, btn2, matches2, "FXP");
