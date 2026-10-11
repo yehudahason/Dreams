@@ -9,9 +9,36 @@ const text1El = document.querySelector(".text1El");
 const text2El = document.querySelector(".text2El");
 const text3El = document.querySelector(".text3El");
 const text4El = document.querySelector(".text4El");
+const btn1 = document.querySelector(".btn-1");
+const btn2 = document.querySelector(".btn-2");
+const btn3 = document.querySelector(".btn-3");
+const btn4 = document.querySelector(".btn-4");
 const form = document.querySelector("#searchForm");
 const searchDiv = document.querySelector(".main-container-search");
 
+btn1.addEventListener("click", () => {
+  text1El.style.display = text1El.style.display === "none" ? "block" : "none";
+
+  btn1.innerText =
+    text1El.style.display === "none" ? "הצג ברכות" : "הסתר ברכות";
+});
+btn2.addEventListener("click", () => {
+  text2El.style.display = text2El.style.display === "none" ? "block" : "none";
+
+  btn2.innerText = text2El.style.display === "none" ? "הצג FXP" : "הסתר FXP";
+});
+btn3.addEventListener("click", () => {
+  text3El.style.display = text3El.style.display === "none" ? "block" : "none";
+
+  btn3.innerText =
+    text3El.style.display === "none" ? "הצג כדורינט" : "הסתר כדורינט";
+});
+btn4.addEventListener("click", () => {
+  text4El.style.display = text4El.style.display === "none" ? "block" : "none";
+
+  btn4.innerText =
+    text4El.style.display === "none" ? "הצג sodot.tv" : "הסתר sodot.tv";
+});
 const baseUrl = "https://yehudahason.github.io/Dreams";
 form.addEventListener("submit", (e) => {
   e.preventDefault();

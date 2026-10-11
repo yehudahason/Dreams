@@ -165,6 +165,12 @@ a {
 .hover-con:hover .info {
   visibility: visible;
 }
+
+.result-btns {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+}
 input[type="text"] {
   padding: 0.2rem 0.6rem;
   border-radius: 8px;
