@@ -1,4 +1,4 @@
-import { searchWord2 } from "./searchWord2.js";
+import { searchWord3 } from "./searchWord3.js";
 
 let text1;
 let text2;
@@ -41,42 +41,80 @@ const handleSearch = (e) => {
   if (commonWords.includes(query)) {
     return;
   }
-  const searchArray = query
-    .replace(/"/g, "")
-    .split(/\s+/)
-    .filter(Boolean)
-    .filter((el) => !commonWords.includes(el));
+  // const searchArray = query
+  //   .replace(/["']/g, "")
+  //   .split(/\s+/)
+  //   .map((word) => {
+  //     switch (word) {
+  //       case "ים":
+  //         return "בים";
+  //       case "הר":
+  //         return ["עולה להר", "ההר"];
+  //       case "נחל":
+  //       case "נהר":
+  //         return ["נהר", "נחל"];
+  //       case "מים":
+  //         return "במים";
 
-  const array1 = new Set();
-  const array2 = new Set();
-  const array3 = new Set();
-  const array4 = new Set();
+  //       case "":
+  //         return "";
+  //       default:
+  //         return word;
+  //     }
+  //   })
+  //   .flat()
+  //   .filter(Boolean)
+  //   .filter((el) => !commonWords.includes(el));
 
-  searchArray.forEach((item) => {
-    const matches1 = searchWord2(text1, item);
-    matches1.forEach((m) => array1.add(m));
+  // const array1 = new Set();
+  // const array2 = new Set();
+  // const array3 = new Set();
+  // const array4 = new Set();
 
-    const matches2 = searchWord2(text2, item);
-    matches2.forEach((m) => array2.add(m));
-    const matches3 = searchWord2(text3, item);
-    matches3.forEach((m) => array3.add(m));
-    const matches4 = searchWord2(text4, item);
-    matches4.forEach((m) => array4.add(m));
-  });
+  // searchArray.forEach((item) => {
+  //   const matches1 = searchWord3(text1, item);
+  //   matches1.forEach((m) => array1.add(m));
+
+  //   const matches2 = searchWord3(text2, item);
+  //   matches2.forEach((m) => array2.add(m));
+  //   const matches3 = searchWord3(text3, item);
+  //   matches3.forEach((m) => array3.add(m));
+  //   const matches4 = searchWord3(text4, item);
+  //   matches4.forEach((m) => array4.add(m));
+  // });
+
+  const matches1 = searchWord3(text1, query);
+  const matches2 = searchWord3(text2, query);
+  const matches3 = searchWord3(text3, query);
+  const matches4 = searchWord3(text4, query);
+
   // console.log(array1);
   searchDiv.style.visibility = "visible";
+  // text1El.innerHTML = `
+  // <h4>מסכת ברכות</h4>
+  //  ${array1.size === 0 ? `<h5>אין תוצאות</h5>` : [...array1].join("<br/><p>*</p>")}`;
+  // text2El.innerHTML = `
+  // <h4>FXP</h4>
+  // ${array2.size === 0 ? `<h5>אין תוצאות</h5>` : [...array2].join("<br/><p>*</p>")}`;
+  // text3El.innerHTML = `
+  // <h4>כדורינט</h4>
+  //  ${array3.size === 0 ? ` <h5>אין תוצאות</h5>` : [...array3].join("<br/><p>*</p>")}`;
+  // text4El.innerHTML = `
+  // <h4>sodot.tv</h4>
+  //  ${array4.size === 0 ? `<h5>אין תוצאות</h5> ` : [...array4].join("<br/><p>*</p>")}`;
+
   text1El.innerHTML = `
   <h4>מסכת ברכות</h4>
-   ${array1.size === 0 ? `<h5>אין תוצאות</h5>` : [...array1].join("<br/><p>*</p>")}`;
+   ${matches1.length === 0 ? `<h5>אין תוצאות</h5>` : [...matches1].join("<br/><p>*</p>")}`;
   text2El.innerHTML = ` 
   <h4>FXP</h4>
-  ${array2.size === 0 ? `<h5>אין תוצאות</h5>` : [...array2].join("<br/><p>*</p>")}`;
+  ${matches2.length === 0 ? `<h5>אין תוצאות</h5>` : [...matches2].join("<br/><p>*</p>")}`;
   text3El.innerHTML = `
   <h4>כדורינט</h4>
-   ${array3.size === 0 ? ` <h5>אין תוצאות</h5>` : [...array3].join("<br/><p>*</p>")}`;
+   ${matches3.length === 0 ? ` <h5>אין תוצאות</h5>` : [...matches3].join("<br/><p>*</p>")}`;
   text4El.innerHTML = `
   <h4>sodot.tv</h4>
-   ${array4.size === 0 ? `<h5>אין תוצאות</h5> ` : [...array4].join("<br/><p>*</p>")}`;
+   ${matches4.length === 0 ? `<h5>אין תוצאות</h5> ` : [...matches4].join("<br/><p>*</p>")}`;
 };
 async function fetchBooks() {
   try {
