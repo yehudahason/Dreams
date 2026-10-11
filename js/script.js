@@ -48,8 +48,61 @@ const handleSearch = () => {
     "אחר",
     "אומר",
   ];
-  if (commonWords.includes(query)) return;
+  if (commonWords.includes(query)) {
+    const warning = ["ביטוי שכיח מדי חפש משהו אחר"];
+    updateResults(text1El, btn1, warning, "ברכות");
+    searchDiv.style.visibility = "visible";
+    return;
+  }
 
+  //For qeury longer that 9 letters split to array
+  if (query.length >= 9) {
+    const searchArray = query
+      .replace(/["']/g, "")
+      .split(/\s+/)
+      .flatMap((word) => {
+        switch (word) {
+          case "ים":
+          case "בים":
+            return ["ים", "בים"];
+
+          case "הר":
+          case "בהר":
+          case "להר":
+            return ["הר", "בהר", "להר"];
+
+          case "נחל":
+          case "נהר":
+            return ["נחל", "נהר"];
+
+          case "מים":
+          case "במים":
+            return ["מים", "במים"];
+
+          default:
+            return [word];
+        }
+      })
+      .filter(Boolean)
+      .filter((el) => !commonWords.includes(el));
+
+    const searchBook = (book) => [
+      ...new Set(searchArray.flatMap((word) => searchWord3(book, word))),
+    ];
+    const matches1 = searchBook(booksArray[0]);
+    const matches2 = searchBook(booksArray[1]);
+    const matches3 = searchBook(booksArray[2]);
+    const matches4 = searchBook(booksArray[3]);
+
+    searchDiv.style.visibility = "visible";
+
+    updateResults(text1El, btn1, matches1, "ברכות");
+    updateResults(text2El, btn2, matches2, "FXP");
+    updateResults(text3El, btn3, matches3, "כדורינט");
+    updateResults(text4El, btn4, matches4, "sodot.tv");
+  }
+  //Already done search so return
+  if (query.length >= 9) return;
   const matches1 = searchWord3(booksArray[0], query);
   const matches2 = searchWord3(booksArray[1], query);
   const matches3 = searchWord3(booksArray[2], query);
