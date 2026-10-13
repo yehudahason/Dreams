@@ -25,10 +25,18 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   query = document.querySelector("#search").value;
+  handleSearch();
 
-  // console.log(query);
-  handleSearch(e);
+  // Update URL without reloading
+  const url = new URL(window.location.href);
+  url.searchParams.set("q", query);
+  window.history.replaceState({}, "", url);
 });
+
+const params = new URLSearchParams(window.location.search);
+
+query = params.get("q");
+
 const booksArray = await fetchBooks();
 
 const handleSearch = () => {
@@ -134,3 +142,9 @@ const handleSearch = () => {
   updateResults(text3El, btn3, matches3, "כדורינט");
   updateResults(text4El, btn4, matches4, "sodot.tv");
 };
+
+// Automatically search when URL contains ?q=
+if (query?.trim()) {
+  document.querySelector("#search").value = query;
+  handleSearch();
+}
