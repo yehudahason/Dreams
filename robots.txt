@@ -1,0 +1,47 @@
+# Sitemap
+Sitemap: https://dreams.pitron-halomot.org/sitemap.xml
+
+# Google Search
+User-agent: Googlebot
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+# Microsoft Bing
+User-agent: Bingbot
+Allow: /
+
+# OpenAI - ChatGPT Search
+User-agent: OAI-SearchBot
+Allow: /
+
+# OpenAI - AI Training
+User-agent: GPTBot
+Allow: /
+
+# OpenAI - User requests
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# All other crawlers
+User-agent: *
+Disallow: /
