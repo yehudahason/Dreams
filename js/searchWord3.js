@@ -59,7 +59,7 @@ function getStartIndex(text, index, wordsBefore = 5) {
 }
 
 // Get 50 words after the match
-function getEndIndex(text, index, wordsAfter = 50) {
+function getEndIndex(text, index, wordsAfter = 127) {
   const regex = new RegExp(WORD_REGEX.source, "gu");
   regex.lastIndex = index;
 
@@ -108,7 +108,7 @@ export function searchWord3(text, query) {
   // Exact matches first
   for (const match of text.matchAll(regex)) {
     const start = getStartIndex(text, match.index, 5);
-    const end = getEndIndex(text, match.index + match[0].length, 50);
+    const end = getEndIndex(text, match.index + match[0].length, 127);
 
     exactRanges.push([start, end]);
   }
@@ -123,7 +123,7 @@ export function searchWord3(text, query) {
       if (candidate !== normalized && matchResult(candidate, normalized)) {
         fuzzyRanges.push([
           getStartIndex(text, match.index, 5),
-          getEndIndex(text, match.index + match[0].length, 50),
+          getEndIndex(text, match.index + match[0].length, 127),
         ]);
       }
     }

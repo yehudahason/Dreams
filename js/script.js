@@ -33,8 +33,8 @@ form.addEventListener("submit", (e) => {
   window.history.replaceState({}, "", url);
 });
 
+// get qeury param from url
 const params = new URLSearchParams(window.location.search);
-
 query = params.get("q");
 
 const booksArray = await fetchBooks();
