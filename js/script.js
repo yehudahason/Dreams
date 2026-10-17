@@ -50,7 +50,7 @@ const handleSearch = () => {
   if (query.length < 2) return;
 
   [text1El, text2El, text3El, text4El, text5El].forEach((el) => {
-    el.replaceChildren();
+    el?.replaceChildren();
   });
   const commonWords = [
     "הרואה",
