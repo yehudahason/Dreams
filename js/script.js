@@ -27,15 +27,18 @@ const baseUrl = "https://yehudahason.github.io/Dreams";
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  query = document.querySelector("#search").value;
+  query = document.querySelector("#search").value.trim();
+
+  if (query.length < 2) return;
+
   handleSearch();
 
-  // Update URL without reloading
   const url = new URL(window.location.href);
   url.searchParams.set("q", query);
-  window.history.replaceState({}, "", url);
-});
 
+  window.history.replaceState({}, "", url);
+  // window.location.reload();
+});
 // get qeury param from url
 const params = new URLSearchParams(window.location.search);
 query = params.get("q");
