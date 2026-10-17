@@ -7,15 +7,18 @@ const btn1 = document.querySelector(".btn-1");
 const btn2 = document.querySelector(".btn-2");
 const btn3 = document.querySelector(".btn-3");
 const btn4 = document.querySelector(".btn-4");
+const btn5 = document.querySelector(".btn-5");
 const text1El = document.querySelector(".text1El");
 const text2El = document.querySelector(".text2El");
 const text3El = document.querySelector(".text3El");
 const text4El = document.querySelector(".text4El");
+const text5El = document.querySelector(".text5El");
 const form = document.querySelector("#searchForm");
 setupToggle(btn1, text1El, "ברכות");
 setupToggle(btn2, text2El, "FXP");
 setupToggle(btn3, text3El, "כדורינט");
 setupToggle(btn4, text4El, "sodot.tv");
+setupToggle(btn5, text5El, "האי גאון");
 
 let query;
 const searchDiv = document.querySelector(".main-container-search");
@@ -101,6 +104,7 @@ const handleSearch = () => {
     const matches2 = searchBook(booksArray[1]);
     const matches3 = searchBook(booksArray[2]);
     const matches4 = searchBook(booksArray[3]);
+    const matches5 = searchBook(booksArray[4]);
 
     searchDiv.style.visibility = "visible";
     //If No results
@@ -108,7 +112,8 @@ const handleSearch = () => {
       matches1.length === 0 &&
       matches2.length === 0 &&
       matches3.length === 0 &&
-      matches4.length === 0
+      matches4.length === 0 &&
+      matches5.length === 0
     ) {
       updateResults(text1El, btn1, ["אין תוצאות חפש משהו אחר"], "ברכות");
       return;
@@ -117,6 +122,7 @@ const handleSearch = () => {
     updateResults(text2El, btn2, matches2, "FXP");
     updateResults(text3El, btn3, matches3, "כדורינט");
     updateResults(text4El, btn4, matches4, "sodot.tv");
+    updateResults(text5El, btn4, matches5, "האי גאון");
   }
   //Already done search so return
   if (query.length >= 9) return;
@@ -124,6 +130,7 @@ const handleSearch = () => {
   const matches2 = searchWord3(booksArray[1], query);
   const matches3 = searchWord3(booksArray[2], query);
   const matches4 = searchWord3(booksArray[3], query);
+  const matches5 = searchWord3(booksArray[4], query);
 
   searchDiv.style.visibility = "visible";
   //No results return
@@ -131,7 +138,8 @@ const handleSearch = () => {
     matches1.length === 0 &&
     matches2.length === 0 &&
     matches3.length === 0 &&
-    matches4.length === 0
+    matches4.length === 0 &&
+    matches5.length === 0
   ) {
     updateResults(text1El, btn1, ["אין תוצאות חפש משהו אחר"], "ברכות");
     return;
@@ -141,6 +149,7 @@ const handleSearch = () => {
   updateResults(text2El, btn2, matches2, "FXP");
   updateResults(text3El, btn3, matches3, "כדורינט");
   updateResults(text4El, btn4, matches4, "sodot.tv");
+  updateResults(text5El, btn4, matches5, "האי גאון");
 };
 
 // Automatically search when URL contains ?q=
