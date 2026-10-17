@@ -31,13 +31,12 @@ form.addEventListener("submit", (e) => {
 
   if (query.length < 2) return;
 
-  handleSearch();
-
   const url = new URL(window.location.href);
   url.searchParams.set("q", query);
 
-  window.history.replaceState({}, "", url);
-  // window.location.reload();
+  window.history.pushState({}, "", url);
+
+  handleSearch();
 });
 // get qeury param from url
 const params = new URLSearchParams(window.location.search);
@@ -50,6 +49,9 @@ const handleSearch = () => {
 
   if (query.length < 2) return;
 
+  [text1El, text2El, text3El, text4El, text5El].forEach((el) => {
+    el.replaceChildren();
+  });
   const commonWords = [
     "הרואה",
     "רואה",
@@ -125,7 +127,7 @@ const handleSearch = () => {
     updateResults(text2El, btn2, matches2, "FXP");
     updateResults(text3El, btn3, matches3, "כדורינט");
     updateResults(text4El, btn4, matches4, "sodot.tv");
-    updateResults(text5El, btn4, matches5, "האי גאון");
+    updateResults(text5El, btn5, matches5, "האי גאון");
   }
   //Already done search so return
   if (query.length >= 9) return;
@@ -152,7 +154,7 @@ const handleSearch = () => {
   updateResults(text2El, btn2, matches2, "FXP");
   updateResults(text3El, btn3, matches3, "כדורינט");
   updateResults(text4El, btn4, matches4, "sodot.tv");
-  updateResults(text5El, btn4, matches5, "האי גאון");
+  updateResults(text5El, btn5, matches5, "האי גאון");
 };
 
 // Automatically search when URL contains ?q=
@@ -160,3 +162,21 @@ if (query?.trim()) {
   document.querySelector("#search").value = query;
   handleSearch();
 }
+
+window.addEventListener("popstate", () => {
+  const params = new URLSearchParams(window.location.search);
+
+  query = params.get("q") ?? "";
+
+  document.querySelector("#search").value = query;
+
+  if (query.length >= 2) {
+    handleSearch();
+  } else {
+    [text1El, text2El, text3El, text4El, text5El].forEach((el) => {
+      el.replaceChildren();
+    });
+
+    searchDiv.style.visibility = "hidden";
+  }
+});
