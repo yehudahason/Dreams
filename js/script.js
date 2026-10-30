@@ -79,28 +79,32 @@ const handleSearch = () => {
       .split(/\s+/)
       .flatMap((word) => {
         switch (word) {
-          case "ים":
+          case "אגם":
+          case "מקווה":
           case "בים":
-            return ["ים", "בים"];
+          case "מעיין":
+          case "מעין":
+          case "ים":
+            return ["אגם", "מקווה", "בים", "מעיין", "מעין"];
 
           case "הר":
-          case "בהר":
           case "להר":
-            return ["הר", "בהר", "להר"];
+          case "עולה":
+            return ["נאוו", "עולה", "להר"];
 
           case "נחל":
           case "נהר":
             return ["נחל", "נהר"];
+
+          case "מים":
+            return ["מים", "במים"];
+
           case "תענית":
           case "כפורים":
           case "כיפורים":
           case "מתענה":
-            return ["תענית", "כפורים", "כיפורים", "מתענה"];
-
-          case "מים":
-          case "במים":
-            return ["מים", "במים"];
-
+          case "נעילה":
+            return ["תענית", "כפורים", "כיפורים", "מתענה", "נעילה"];
           default:
             return [word];
         }
