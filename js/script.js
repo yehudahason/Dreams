@@ -63,6 +63,7 @@ const handleSearch = () => {
     "יש",
     "אחר",
     "אומר",
+    "ימים",
   ];
   if (commonWords.includes(query)) {
     const warning = ["ביטוי שכיח מדי חפש משהו אחר"];
@@ -72,7 +73,7 @@ const handleSearch = () => {
   }
 
   //For qeury longer that 9 letters split to array
-  if (query.length >= 9) {
+  if (query.length >= 2) {
     const searchArray = query
       .replace(/["']/g, "")
       .split(/\s+/)
@@ -90,6 +91,11 @@ const handleSearch = () => {
           case "נחל":
           case "נהר":
             return ["נחל", "נהר"];
+          case "תענית":
+          case "כפורים":
+          case "כיפורים":
+          case "מתענה":
+            return ["תענית", "כפורים", "כיפורים", "מתענה"];
 
           case "מים":
           case "במים":
@@ -130,7 +136,7 @@ const handleSearch = () => {
     updateResults(text5El, btn5, matches5, "האי גאון");
   }
   //Already done search so return
-  if (query.length >= 9) return;
+  if (query.length >= 2) return;
   const matches1 = searchWord3(booksArray[0], query);
   const matches2 = searchWord3(booksArray[1], query);
   const matches3 = searchWord3(booksArray[2], query);
