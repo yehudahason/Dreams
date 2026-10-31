@@ -75,8 +75,11 @@ const handleSearch = () => {
   //For qeury longer that 9 letters split to array
   if (query.length >= 2) {
     const searchArray = query
+      //replace all query
+      .replace(/יום (הכיפורים|כיפורים|הכפורים|כפורים)/g, "תענית")
       .replace(/["']/g, "")
       .split(/\s+/)
+      //replace split words
       .flatMap((word) => {
         switch (word) {
           case "אגם":
@@ -99,10 +102,6 @@ const handleSearch = () => {
           case "מים":
             return ["מים", "במים"];
 
-          case "יום הכיפורים":
-          case "יום כיפורים":
-          case "יום הכפורים":
-          case "יום כפורים":
           case "תענית":
           case "כפורים":
           case "הכיפורים":
