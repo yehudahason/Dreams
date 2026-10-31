@@ -98,7 +98,9 @@ const handleSearch = () => {
           case "נחל":
           case "נהר":
             return ["נחל", "נהר"];
-
+          case "צפור":
+          case "ציפור":
+            return ["צפור", "ציפור"];
           case "מים":
             return ["מים", "במים"];
 
