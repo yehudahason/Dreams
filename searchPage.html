@@ -1,11 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="he" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>חפש פירוש</title>
+
     <link rel="stylesheet" href="./style/style1.css" />
     <link rel="icon" type="image/png" href="./img/favicon.png" />
+
+    <!-- Accessibility -->
+    <style>
+      .skip-link {
+        position: fixed;
+        top: -100px;
+        right: 10px;
+        z-index: 9999;
+        padding: 10px 15px;
+        background: white;
+        color: black;
+      }
+
+      .skip-link:focus {
+        top: 10px;
+      }
+
+      .hover-con:focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 4px;
+      }
+
+      .hover-con:focus .info {
+        display: block;
+        visibility: visible;
+        opacity: 1;
+      }
+    </style>
+
     <!-- Google Analytics -->
     <script
       async
@@ -23,74 +53,149 @@
       gtag("config", "G-PL9W9RRMZL");
     </script>
   </head>
+
   <body>
+    <a href="#main-content" class="skip-link"> דלג לתוכן הראשי </a>
+
     <h1>פירוש חלומות על פי היהדות</h1>
+
     <header>
       <div class="headercontainer">
-        <nav class="navcontainer">
+        <nav class="navcontainer" aria-label="ניווט ראשי">
           <a href="./index.html">כדורינט</a>
           <a href="./2.html">מסכת ברכות</a>
           <a href="./3.html">FXP</a>
           <a href="./4.html">sodot tv</a>
           <a href="https://pitron-halomot.org/">האי גאון</a>
-          <a class="centering" href="./searchPage.html"
-            >חפש
 
-            <img src="./img/search.png" alt="" />
+          <a class="centering" href="./searchPage.html">
+            חפש
+
+            <img src="./img/search.png" alt="" aria-hidden="true" />
           </a>
         </nav>
       </div>
     </header>
-    <h2>חפש פירוש</h2>
 
-    <div class="search-con">
-      <form id="searchForm">
-        <label for="search" class="sr-only">חיפוש</label>
-        <input type="text" name="search" id="search" />
-        <button type="submit">חפש</button>
-      </form>
-      <div class="hover-con">
-        <div class="info">מחפש מילה מדויקת</div>
-        <img src="./img/question.png" alt="מידע" />
-      </div>
-    </div>
-    <div class="main-container-search">
-      <div class="result-btns">
-        <button class="btn-5">הסתר האי גאון</button>
-        <button class="btn-1">הסתר ברכות</button>
-        <button class="btn-2">הסתר FXP</button>
-        <button class="btn-3">הסתר כדורינט</button>
-        <button class="btn-4">הסתר sodot.tv</button>
-      </div>
-      <div class="text5El"></div>
-      <br />
-      <div class="text1El"></div>
-      <br />
-      <div class="text2El"></div>
-      <br />
-      <div class="text3El"></div>
-      <br />
+    <main id="main-content">
+      <h2>חפש פירוש</h2>
 
-      <div class="text4El"></div>
-    </div>
+      <div class="search-con">
+        <form id="searchForm" role="search" aria-label="חיפוש פירושי חלומות">
+          <label for="search" class="sr-only">חיפוש</label>
+
+          <input
+            type="text"
+            name="search"
+            id="search"
+            aria-describedby="searchHint"
+          />
+
+          <button type="submit">חפש</button>
+        </form>
+
+        <div
+          class="hover-con"
+          tabindex="0"
+          role="note"
+          aria-label="מידע על החיפוש"
+          aria-describedby="searchHint"
+        >
+          <div class="info" id="searchHint">מחפש מילה מדויקת</div>
+
+          <img src="./img/question.png" alt="" aria-hidden="true" />
+        </div>
+      </div>
+
+      <div class="main-container-search">
+        <div class="result-btns" role="group" aria-label="סינון תוצאות החיפוש">
+          <button type="button" class="btn-5" aria-controls="results-5">
+            הסתר האי גאון
+          </button>
+
+          <button type="button" class="btn-1" aria-controls="results-1">
+            הסתר ברכות
+          </button>
+
+          <button type="button" class="btn-2" aria-controls="results-2">
+            הסתר FXP
+          </button>
+
+          <button type="button" class="btn-3" aria-controls="results-3">
+            הסתר כדורינט
+          </button>
+
+          <button type="button" class="btn-4" aria-controls="results-4">
+            הסתר sodot.tv
+          </button>
+        </div>
+
+        <div
+          class="text5El"
+          id="results-5"
+          role="region"
+          aria-label="תוצאות האי גאון"
+        ></div>
+
+        <br />
+
+        <div
+          class="text1El"
+          id="results-1"
+          role="region"
+          aria-label="תוצאות מסכת ברכות"
+        ></div>
+
+        <br />
+
+        <div
+          class="text2El"
+          id="results-2"
+          role="region"
+          aria-label="תוצאות FXP"
+        ></div>
+
+        <br />
+
+        <div
+          class="text3El"
+          id="results-3"
+          role="region"
+          aria-label="תוצאות כדורינט"
+        ></div>
+
+        <br />
+
+        <div
+          class="text4El"
+          id="results-4"
+          role="region"
+          aria-label="תוצאות sodot.tv"
+        ></div>
+      </div>
+    </main>
+
     <div class="headercontainer">
-      <div class="navcontainer">
+      <nav class="navcontainer" role="navigation" aria-label="ניווט תחתון">
         <a href="./index.html">כדורינט</a>
         <a href="./2.html">מסכת ברכות</a>
         <a href="./3.html">FXP</a>
         <a href="./4.html">sodot tv</a>
         <a href="https://pitron-halomot.org/">האי גאון</a>
-        <a class="centering" href="./searchPage.html"
-          >חפש
 
-          <img src="./img/search.png" alt="" />
+        <a class="centering" href="./searchPage.html">
+          חפש
+
+          <img src="./img/search.png" alt="" aria-hidden="true" />
         </a>
-      </div>
+      </nav>
     </div>
+
     <footer>
       <div dir="ltr" class="attribution">
         <span class="separator" aria-hidden="true"> • </span>
         Coded by
+
         <a
           href="https://github.com/yehudahason"
           target="_blank"
@@ -100,6 +205,7 @@
         </a>
       </div>
     </footer>
+
     <script>
       window.nl_color = "yellow";
       window.nl_compact = "1";
@@ -111,6 +217,7 @@
       charset="utf-8"
       defer
     ></script>
+
     <script src="./js/script.js" type="module"></script>
   </body>
 </html>
