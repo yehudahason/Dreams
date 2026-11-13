@@ -55,7 +55,6 @@ const handleSearch = () => {
   const commonWords = [
     "הרואה",
     "רואה",
-    "הרו",
     "בחלום",
     "חלום",
     "של",
@@ -63,7 +62,14 @@ const handleSearch = () => {
     "יש",
     "אחר",
     "אומר",
+    "על",
+    "מתוך",
+    "מקום",
+    "רבים",
+    "טובים",
     "ימים",
+    "עם",
+    "עים",
   ];
   if (commonWords.includes(query)) {
     const warning = ["ביטוי שכיח מדי חפש משהו אחר"];
