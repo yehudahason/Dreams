@@ -95,6 +95,10 @@ const handleSearch = () => {
           case "עולה":
             return ["נאוו", "עולה", "להר"];
 
+          case "סיר":
+          case "קדירה":
+          case "קדרה":
+            return ["קדירה", "קדרה", "סיר"];
           case "נחל":
           case "נהר":
             return ["נחל", "נהר"];
