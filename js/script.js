@@ -122,6 +122,12 @@ const handleSearch = () => {
           case "מתענה":
           case "נעילה":
             return ["תענית", "מתענה", "כפורים", "כיפורים", "נעילה"];
+          case "מרחץ":
+          case "מקלחת":
+          case "למקלחת":
+          case "רוחץ":
+          case "מתקלח":
+            return ["מרחץ", "מקלחת", "רוחץ"];
           default:
             return [word];
         }
